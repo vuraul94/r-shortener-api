@@ -31,7 +31,13 @@ Things you may want to cover:
     
     2-execute the command "heroku login"
 
-    3-
+    3-Initialize and commit changes in repository
+
+    4-Add postgresql plugin to heroku project
+
+    5-execute the command "heroku rails db:migrate"
+
+    6-execute the command "git push heroku master"
 
 * Algorithm explanation
 
