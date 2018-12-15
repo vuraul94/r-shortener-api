@@ -5,8 +5,16 @@ class ShortUrlsController < ApplicationController
 
   # GET /short_urls
   def index
-    @short_urls = ShortUrl.order(visits: :desc).limit(100)
-    render json: @short_urls
+    if params[:url]
+      begin
+        render json: find(params[:url])
+      rescue
+        render json: {error: "Shortened URL Not Found"}, status: :not_found
+      end
+    else
+      @short_urls = ShortUrl.order(visits: :desc).limit(100)
+      render json: @short_urls
+    end
   end
 
   # GET /short_urls/1
@@ -35,6 +43,15 @@ class ShortUrlsController < ApplicationController
       else
         render json: @short_url.errors, status: :unprocessable_entity
       end
+    end
+  end
+
+  def find(paramUrl)
+    url_shortened = ShortUrl.find_by url:paramUrl
+    if url_shortened
+      return url_shortened
+    else
+      throw "URL Not shortened yet"
     end
   end
 

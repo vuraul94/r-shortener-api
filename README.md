@@ -27,6 +27,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
+    1-Install heroku client
+    2-execute the command "heroku login"
+
 * Algorithm explanation
 
 -Shortening
