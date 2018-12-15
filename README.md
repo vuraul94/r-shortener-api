@@ -28,7 +28,10 @@ Things you may want to cover:
 * Deployment instructions
 
     1-Install heroku client
+    
     2-execute the command "heroku login"
+
+    3-
 
 * Algorithm explanation
 
@@ -41,3 +44,22 @@ Things you may want to cover:
 -Get Title in job
 
     Get body of page -> get title tag -> update
+
+
+*Endpoints
+
+-100 more visited
+>GET https://r-shortener-api.herokuapp.com/
+
+-url data get
+>GET https://r-shortener-api.herokuapp.com/?url=https://google.com
+
+-url redirect 
+>GET https://r-shortener-api.herokuapp.com/e933dbe
+
+-create shortening 
+>POST https://r-shortener-api.herokuapp.com/
+>
+>{
+> "url": "https://www.facebook.com"   
+>}
