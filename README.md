@@ -5,20 +5,36 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 
 
-* System dependencies
+    ruby 2.3.3p222 (2016-11-21 revision 56859) [i386-mingw32]
 
-* Configuration
+* Configuration 
 
-* Database creation
+    gems installed (nokogiri, httparty)
 
-* Database initialization
+* Database initialization 
+
+    rails db:migrate
 
 * How to run the test suite
 
+    rails s
+
 * Services (job queues, cache servers, search engines, etc.)
+    
+    ShortUrlTitlesJob
 
 * Deployment instructions
 
-* ...
+* Algorithm explanation
+
+-Shortening
+
+    Initial Url (String) ->  Add time to the initial url -> encode to md5 -> Get the first 7 characters
+
+-Save
+
+-Get Title in job
+
+    Get body of page -> get title tag -> update
